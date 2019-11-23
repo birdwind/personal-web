@@ -1,13 +1,182 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
 	<title>LIU YU JU Personal Web</title>
 	<style type="text/css">
-		
-	</style>
-</head>
-<body >
+		body { 
+		  	margin     : 0; 
+			padding    : 0;
+			font-family: \5FAE\8EDF\6B63\9ED1\9AD4, Arial, sans-serif;
+		} 
+		img { 
+			max-width: 100%;
+			width    : 100%;
+			height   : auto; 
+		}
+		img.smallscreen { 
+			display: none; 
+		}
+		/* 如果使用者視窗寬度 <= 768px */
+		@media screen and (max-width: 768px) {
+			img { 
+				display: none; 
+			}
+			img.smallscreen { 
+				display: block; 
+		 	}
+		}
+		.main {
+			float: right;
+			width: 70%;
+		}
+		.leftBar {
+		float: left;
+		width: 25%;
+		}
+		img { max-width: 100%;}
+		.button_menu{
+			background-image: url(images/experience/menu.jpg);
+			margin: 20px;
+			width: 81px;
+			height: 50px;
+			border: none;
+		}
+		.img_setting{
+			display: none;
+			position: absolute;
+			width:30%;
+		}
+		.img_setting2{
+			position: absolute;
+			width:30%;
+		}
+		.img_people{
+			display: none;
+			position: absolute;
+		}
+		/*側邊*/
+		.sidenav {
+		    height: 100%; /* 100% Full-height */
+		    width: 0; /* 0 width - change this with JavaScript */
+		    position: fixed; /* Stay in place */
+		    z-index: 1; /* Stay on top */
+		    top: 0;
+		    left: 0;
+		    opacity:0.85; 
+		    background-color: #1605FF; /* Black*/
+		    overflow-x: hidden; /* Disable horizontal scroll */
+		    padding-top: 0px; /* Place content 60px from the top */
+		    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+		}
 
+		/* The navigation menu links */
+		.sidenav a {
+			position: relative;
+			left: 50px;
+			font-family:'LIU',sans-serif;
+			letter-spacing:4px;
+		    padding: 45px 8px 8px 32px;
+		    text-decoration: none;
+		    font-size: 25px;
+		    color: #FFF;
+		    display: block;
+		    transition: 0.3s
+		}
+
+		/* When you mouse over the navigation links, change their color */
+		.sidenav a:hover, .offcanvas a:focus{
+		    color: 	#E0E0E0;
+		    opacity: 1;
+		}
+
+		/* Position and style the close button (top right corner) */
+		.sidenav .closebtn {
+		    position: absolute;
+		    top: 0;
+		    right: 25px;
+		    font-size: 36px;
+		    margin-left: 50px;
+		}
+
+		/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+		#main {
+		    transition: margin-left .5s;
+		    padding: 20px;
+		}
+
+		/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+		@media screen and (max-height: 450px) {
+		    .sidenav {padding-top: 15px;}
+		    .sidenav a {font-size: 18px;}
+		}
+		@font-face {
+			font-family: "LIU";
+			src: url('images/HGRHG9.TTC') format('opentype');
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		var t=setInterval("actionMovie()",100);
+		function actionMovie(){
+			
+				$("#person").fadeIn(2000);
+				$("#1_back").delay(50 ).animate({left:'18%'});
+				$("#1_line").delay(100).fadeIn(1000);
+				$("#2_back").delay(100).animate({left:'18%'});
+				$("#2_line").delay(150).fadeIn(1000);
+		    	$("#3_back").delay(150).animate({left:'18%'});
+				$("#3_line").delay(200).fadeIn(1000);
+				$("#4_back").delay(200).animate({left:'18%'});
+				$("#4_line").delay(250).fadeIn(1000);
+				$("#5_back").delay(250).animate({left:'18%'});
+				$("#5_line").delay(300).fadeIn(1000);
+				clearInterval(t);
+		    }
+		//側邊
+		function openNav() {
+		    document.getElementById("mySidenav").style.width = "350px";
+		}
+
+		/* Set the width of the side navigation to 0 */
+		function closeNav() {
+		    document.getElementById("mySidenav").style.width = "0";
+		}
+</script>
+</head>
+<body style="background: #000 ">
+	<div><!--側邊-->
+		<div id="mySidenav" class="sidenav">
+			<input type="button" class="button_menu" style="background: #1605FF url(images/menu_nobackground.png)" onclick="closeNav()"/>
+			<a href="index.html">Home</a>
+			<a href="catwalk.html">CATWALK</a>
+			<a href="aboutme.html">ABOUT ME</a>
+			<a href="portfolio.html">PORTFOLIO</a>
+			<a href="#">EXPERIENCE</a>
+		</div>
+		<div style="position: static; top: 0%;left: 0%; width: 81px; height:50px;">
+			<input type="button" class="button_menu" style="background: #000 url(images/menu_nobackground.png)" onclick="openNav()"/>
+		</div>
+	</div>
+	<div style="position: static; bottom: 0%; left: 0px;">
+		<img src="images/experience/人.png" id="person" class="img_people" style="bottom: 0%; left: 60%; height: 90%;width: auto;"/>
+
+		<img src="images/experience/back.png" id="1_back" class=" img_setting2" style="position: absolute; bottom: 600px;left: 10%;"/>
+		<img src="images/experience/1.png" id="1_line" class=" img_setting" style="bottom: 600px;left: 18%;"/>
+
+		<img src="images/experience/back.png" id="2_back" class=" img_setting2" style="position: absolute; bottom: 510px;left: 10%"/>
+		<img src="images/experience/2.png" id="2_line" class=" img_setting" style="bottom: 510px;left: 18%"/>
+
+		<img src="images/experience/back.png" id="3_back" class=" img_setting2" style="position: absolute; bottom: 420px;left: 10%"/>
+		<img src="images/experience/3.png" id="3_line" class=" img_setting" style="bottom: 420px;left: 18%"/>
+
+		<img src="images/experience/back.png" id="4_back" class=" img_setting2" style="position: absolute; bottom: 330px;left: 10%"/>
+		<img src="images/experience/4.png" id="4_line" class=" img_setting" style="bottom: 330px; left: 18%"/>
+
+		<img src="images/experience/back.png" id="5_back" class=" img_setting2" style="position: absolute; bottom: 240px;left: 10%"/>
+		<img src="images/experience/5.png" id="5_line" class=" img_setting" style="bottom: 240px; left: 18%"/>
+	</div>	
+		
+	
 </body>
 </html>

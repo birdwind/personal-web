@@ -1,0 +1,90 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>孟甲商行</title>
+
+<style>
+#mwt_mwt_slider_scroll
+{
+ top: 0;
+ left:-255px;
+ width:255px; 
+ position:fixed;
+ z-index:9999;
+ position:relative;
+}
+#mwt_slider_content{
+ background:#3c5a98;
+ text-align:center;
+ padding-top:20px;
+ height:126px;
+}
+#mwt_fb_tab {
+ position:absolute;
+ top:0px;
+ right:-24px;
+ width:24px;
+ height:128px;
+ background:#3c5a98;
+ color:#ffffff;
+ font-family:Arial, Helvetica, sans-serif; 
+ text-align:center;
+ padding:9px 0;
+ -moz-border-radius-topright:10px;
+ -moz-border-radius-bottomright:10px;
+ -webkit-border-top-right-radius:10px;
+ -webkit-border-bottom-right-radius:10px; 
+}
+#mwt_fb_tab span {
+ display:block;
+ height:12px;
+ padding:1px 0;
+ line-height:12px;
+ text-transform:uppercase;
+ font-size:12px;
+}
+</style>
+
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
+<script>
+$(function(){
+ var w = $("#mwt_slider_content").width();
+ $('#mwt_slider_content').css('height', ($(window).height(105) - 20) + 'px' ); 
+ 
+ $("#mwt_fb_tab").mouseover(function(){
+  if ($("#mwt_mwt_slider_scroll").css('left') == '-'+w+'px')
+  {
+   $("#mwt_mwt_slider_scroll").animate({ left:'0px' }, 600 ,'swing');
+  }
+ }); 
+ 
+ $("#mwt_slider_content").mouseleave(function(){
+  $("#mwt_mwt_slider_scroll").animate( { left:'-'+w+'px' }, 600 ,'swing'); 
+ }); 
+});
+</script>
+</head>
+
+<body>
+ <div id="mwt_mwt_slider_scroll">
+   <div id="mwt_fb_tab">
+   <span>F</span>
+   <span>a</span>
+   <span>c</span>
+   <span>e</span>
+   <span>b</span>
+   <span>o</span>
+   <span>o</span>
+   <span>o</span>
+   <span>k</span> 
+  </div>
+  <div id="mwt_slider_content">
+   <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2F%25E7%258C%259B%25E7%2594%25B2%25E8%258C%25B6%25E9%2581%2593%2F154932484572230&width=200&colorscheme=light&show_faces=true&stream=true&header=true&height=105" scrolling="auto" frameborder="0" style="border:none; overflow:hidden; width:220px; height:105px;background-color:white;" allowtransparency="true"></iframe>
+  </div>
+ </div>
+ 
+</body>
+</html>
+

@@ -3,14 +3,31 @@
 <head>
 <meta charset="utf-8">
 	<title>LIU YU JU Personal Web</title>
+	<!-- Latest compiled and minified CSS -->
+	
+	
 	<style type="text/css">
-		body {
-	    margin:0;
-	    padding:0;
-	    background: #000 url(images/index2.jpg) center center fixed no-repeat;
-	    -moz-background-size: cover;
-	    background-size: cover;
-		}
+		body { 
+			  margin     : 0; 
+			  padding    : 0;
+			} 
+			img { 
+			  max-width: 100%;
+			  width    : 100%;
+			  height   : auto; 
+			}
+			img.smallscreen { 
+			  display: none; 
+			}
+			/* 如果使用者視窗寬度 <= 768px */
+			@media screen and (max-width: 768px) {
+			  img { 
+			    display: none; 
+			  }
+			  img.smallscreen { 
+			    display: block; 
+			  }
+			}
 		
 		.button_menu{
 			background-image: url(images/menu.png);
@@ -20,31 +37,68 @@
 		}
 		.button_image{
 			position: absolute;
-			width: 53px;
-			height: 156px;
 			border-width: 0;
 			opacity: 0.75;
 		}
 		.button_image:hover{
 			opacity: 3;
 		}
+		.contact{
+			opacity: 0.75;
+		}
+		.contact:hover{
+			opacity: 3;
+		}
+		.bg{
+			width:90%;
+		 	height:100%;
+		 	top:0px;
+		 	left:5%;
+		 	right: 80px;
+		 	position:absolute;
+		 	filter: Alpha(opacity=50);
+		 	
+		 	background:#1605FF;
+		 	display: none;
+		}
 	</style>
+	<script type="text/javascript">
+		var bool=false;
+		function ShowController(){
+			if(bool == false){
+				document.getElementById("div_bg").style.display = "block";
+				document.getElementById("big_bg").style.display = "block";
+				bool=true;
+			}
+			else{
+				document.getElementById("div_bg").style.display = "none";
+				document.getElementById("big_bg").style.display = "none";
+				bool=false;
+			}
+		}
+	</script>
 </head>
-<body >
-	<!--<input typo="images" name="button_menu" id="Button_Menu" img src="images/menu.jpg" onclick="button_menu()">-->
-	<!--
-	<input type="button" class="button_memo" style="position: absolute; top: 0vh;left: 0vh; display: none;"/>
-	<input type="button" class="button_image" style="background-image: url(/images/contact.png); top: 20vh;left: 0vh;"  />
-	<input type="button" class="button_image" style="background-image: url(/images/portfolio.png); top: 70vh;left: 0vh;"  />
-	<input type="button" class="button_image" style="background-image: url(/images/portfolio.png); top: 20vh;right: 0vh;"  />
-	<input type="button" class="button_image" style="background-image: url(/images/portfolio.png); top: 70vh;right: 0vh;"  />
--->
-	
-	<input type="button" class="button_menu" style="position: absolute; top: 0vh;left: 0vh; display: none;"/>
-	<a href="#"><img src="images/contact.png" class="button_image" style="top: 20vh;left: 0vh";/>
-	<a href="#"><img src="images/contact.png" class="button_image" style="top: 70vh;left: 0vh";/>
-	<a href="#"><img src="images/contact.png" class="button_image" style="top: 20vh;right: 0vh";/>
-	<a href="#"><img src="images/contact.png" class="button_image" style="top: 70vh;right: 0vh";/>
-	
+<body style="background:#1605FF url(images/index/index.jpg)center center fixed no-repeat; border: none; background-size: 1300px auto;">
+	<div>
+		
+		<a href="portfolio.html"><img src="images/index/portfolio.jpg" class="button_image" style="top: 22%;left: 5px; width: 50px; height: auto;"/></a>
+		<img src="images/index/1.jpg" class="button_image" style="top: 60%;left: 0px ;width: 65px; height: auto;" onclick="ShowController()" />
+		<a href="aboutme.html"><img src="images/index/about.jpg" class="button_image" style="top: 10%;right: -10px;width: 80px; height: auto"/></a>
+		<a href="experience.html"><img src="images/index/experience.jpg" class="button_image" style="top: 35%;right: 5px ;width: 50px; height: auto;"/></a>
+		<a href="catwalk.html"><img src="images/index/catwalk.jpg" class="button_image" style="top: 70%;right: 5px ;width: 50px; height: auto;"/></a>
+	</div>
+	<div id="div_bg" class="bg" onclick="hiddenphtop()"></div>
+		<div id="big_bg"; style="background:#000; display: none;" >
+			<a href="http://instagram.com/cool50423">
+				<img src="images\contact_me\IG.png" class="contact" style="position: absolute;height: auto;width:250px; top: 280px; left: 10%;" />
+			</a>
+			<a href="https://www.facebook.com/cool50423">
+				<img src="images\contact_me\FB.png" class="contact" style="position: absolute;height: auto;width:100px; top: 330px; left: 45%; " />
+			</a>
+			<a href="portfolio.html">
+				<img src="images\contact_me\Mail.png" class="contact" style="position: absolute;height: auto;width:180px; top: 330px; left: 70%" />
+			</a>
+		</div>
+	</div>
 </body>
 </html>

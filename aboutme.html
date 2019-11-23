@@ -1,13 +1,143 @@
-<!DOCTYPE html>
+
 <html>
 <head>
-<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="description" content="Blueprint: Slide and Push Menus" />
+<meta name="author" content="Codrops" />
+<link rel="stylesheet" type="text/css" href="css/default.css" />
+<link rel="stylesheet" type="text/css" href="css/component.css" />
 	<title>LIU YU JU Personal Web</title>
 	<style type="text/css">
-		
-	</style>
-</head>
-<body >
+		.button_menu{
+			width: 81px;
+			height: 50px;
+			border: none;
+		}
+		.img_setting{
+			display: none;
+			position: absolute;
+		}
+		/*側邊*/
+		.sidenav {
+		    height: 100%; /* 100% Full-height */
+		    width: 0; /* 0 width - change this with JavaScript */
+		    position: fixed; /* Stay in place */
+		    z-index: 1; /* Stay on top */
+		    top: 0;
+		    left: 0;
+		    opacity:0.85; 
+		    background-color: #1605FF; /* Black*/
+		    overflow-x: hidden; /* Disable horizontal scroll */
+		    padding-top: 20px; /* Place content 60px from the top */
+		    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+		}
 
+		/* The navigation menu links */
+		.sidenav a {
+			position: relative;
+			left: 50px;
+			top: 50px;
+			font-family:'LIU',sans-serif;
+			letter-spacing:4px;
+		    padding: 45px 8px 8px 32px;
+		    text-decoration: none;
+		    font-size: 25px;
+		    color: #FFF;
+		    display: block;
+		    transition: 0.3s
+		}
+
+		/* When you mouse over the navigation links, change their color */
+		.sidenav a:hover, .offcanvas a:focus{
+		    color: 	#E0E0E0;
+		    opacity: 1;
+		}
+
+		/* Position and style the close button (top right corner) */
+		.sidenav .closebtn {
+		    position: absolute;
+		    top: 0;
+		    right: 25px;
+		    font-size: 36px;
+		    margin-left: 50px;
+		}
+
+		/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+		#main {
+		    transition: margin-left .5s;
+		    padding: 20px;
+		}
+
+		/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+		@media screen and (max-height: 450px) {
+		    .sidenav {padding-top: 15px;}
+		    .sidenav a {font-size: 18px;}
+		}
+		@font-face {
+			font-family: "LIU";
+			src: url('images/HGRHG9.TTC') format('opentype');
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+
+		var timer=setInterval("actionMovie()",30);
+
+		function actionMovie(){
+			var count=0;
+		    count=parseInt(document.getElementById("cycle").style.top);
+		    count=count+10;
+		    if (count>200) {
+		    	clearInterval(timer);
+		    	$("#personal").fadeIn();
+		    	$("#name").delay(100).fadeIn(1000);
+		    	$("#medium").delay(500).fadeIn(1000);
+		    	$("#data").delay(1000).fadeIn(1000);
+		    }
+			document.getElementById("cycle").style.top=count;
+		}
+		//側邊
+		function openNav() {
+		    document.getElementById("mySidenav").style.width = "350px";
+		}
+
+		/* Set the width of the side navigation to 0 */
+		function closeNav() {
+		    document.getElementById("mySidenav").style.width = "0";
+		}
+</script>
+
+</head>
+
+<body  style="background: #000">
+	<div><!--側邊-->
+		<div id="mySidenav" class="sidenav">
+			<input type="button" class="button_menu" style="position: absolute;left: 20px; background: #1605FF url(images/menu_nobackground.png)" onclick="closeNav()"/>
+			<a href="index.html">Home</a>
+			<a href="catwalk.html">CATWALK</a>
+			<a href="#">ABOUT ME</a>
+			<a href="portfolio.html">PORTFOLIO</a>
+			<a href="experience.html">EXPERIENCE</a>
+		</div>
+
+		<div style="position: relative;padding: 20px;width: 81px; height:50px;">
+			<input type="button" class="button_menu" style="background: #000 url(images/menu_nobackground.png)" onclick="openNav()"/>
+		</div>
+	</div>
+	
+	<div style="position: absolute; bottom: 0%; left: 0px;min-width: 100%;min-height: 90%;">
+		<div style="position: absolute; bottom: 0%; left: 0%;min-width: 50%;min-height: 100%;">
+			<img src="images/about_me/藍圓形.png" id="cycle" style="position: absolute; top: -200px;left: 355px"/>	
+			<img src="images/about_me/人物.png" id="personal" style=" left: 400px;top: 130px;" class="img_setting" />
+	
+			<img src="images/about_me/name.png" id="name" style="left: 1000px;top: 160px;" class="img_setting"/>
+			<img src="images/about_me/medium.png" id="medium" style="left: 1150px;top: 160px" class="img_setting"/>
+			<img src="images/about_me/data.png" id="data" style="left: 750px;top: -340px;padding: 500px" class="img_setting"/>
+		</div>
+	</div>
+
+	
 </body>
 </html>

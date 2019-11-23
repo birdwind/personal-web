@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+var timer=setInterval("com()",50);
+var cnt=0;
+
+function com(){
+    cnt=parseInt(document.getElementById("aaa").style.top);
+    cnt=cnt+20;
+    if (cnt>200) clearInterval(timer); ;
+  document.getElementById("aaa").style.top=cnt;
+}
+
+</script>
+</head>
+<body style="background: #000">
+
+<div id="aaa" style="position: absolute; top: -200px; left: 200px;">
+<img src="images/about_me/藍圓形.png">
+</div>
+
+</body></html>

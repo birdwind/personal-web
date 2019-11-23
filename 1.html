@@ -19,98 +19,10 @@
 			body { 
 				-webkit-font-smoothing: antialiased; 
 			}
-			.button_menu{
-			background-image: url(images/experience/menu.jpg);
-			margin: 20px;
-			width: 81px;
-			height: 50px;
-			border: none;
-			}
-			/*側邊*/
-			.sidenav {
-			    height: 100%; /* 100% Full-height */
-			    width: 0; /* 0 width - change this with JavaScript */
-			    position: fixed; /* Stay in place */
-			    z-index: 1; /* Stay on top */
-			    top: 0;
-			    left: 0;
-			    opacity:0.85; 
-			    background-color: #1605FF; /* Black*/
-			    overflow-x: hidden; /* Disable horizontal scroll */
-			    padding-top: 0px; /* Place content 60px from the top */
-			    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-			}
-
-			/* The navigation menu links */
-			.sidenav a {
-				position: relative;
-				left: 50px;
-				font-family:'LIU',sans-serif;
-				letter-spacing:4px;
-			    padding: 45px 8px 8px 32px;
-			    text-decoration: none;
-			    font-size: 25px;
-			    color: #FFF;
-			    display: block;
-			    transition: 0.3s
-			}
-
-			/* When you mouse over the navigation links, change their color */
-			.sidenav a:hover, .offcanvas a:focus{
-			    color: 	#E0E0E0;
-			    opacity: 1;
-			}
-
-			/* Position and style the close button (top right corner) */
-			.sidenav .closebtn {
-			    position: absolute;
-			    top: 0;
-			    right: 25px;
-			    font-size: 36px;
-			    margin-left: 50px;
-			}
-
-			/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-			#main {
-			    transition: margin-left .5s;
-			    padding: 20px;
-			}
-
-			/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-			@media screen and (max-height: 450px) {
-			    .sidenav {padding-top: 15px;}
-			    .sidenav a {font-size: 18px;}
-			}
-			
 		</style>
-		<script type="text/javascript">
-			//側邊
-			function openNav() {
-			    document.getElementById("mySidenav").style.width = "350px";
-			}
-
-			/* Set the width of the side navigation to 0 */
-			function closeNav() {
-			    document.getElementById("mySidenav").style.width = "0";
-			}
-		</script>
 	</head>
 
 	<body class="home" >
-		<div><!--側邊-->
-			<div id="mySidenav" class="sidenav">
-				<input type="button" class="button_menu" style="background: #1605FF url(images/menu_nobackground.png)" onclick="closeNav()"/>
-				<a href="index.html">Home</a>
-				<a href="#">CATWALK</a>
-				<a href="aboutme.html">ABOUT ME</a>
-				<a href="portfolio.html">PORTFOLIO</a>
-				<a href="experience.html">EXPERIENCE</a>
-			</div>
-
-			<div style="position: static; top: 0%;left: 0%; width: 81px; height:50px;">
-				<input type="button" class="button_menu" style="background: #000 url(images/menu_nobackground.png)" onclick="openNav()"/>
-			</div>
-		</div>
 		<div style="background: #000">
 			<div class="divblock-home-14">
 			</div>
